@@ -6,13 +6,6 @@ import random
 import time
 import asyncio
 
-configcsv = "config.csv"
-kanjicsv = "kanji.csv"
-token = SearchElementOnCSV(configcsv, "Token", 1)
-client = commands.Bot(command_prefix="!re")
-lastKanji = "Uno"
-lastkanjireverse = "Dos"
-
 
 # This function will search an specified value on a specified csv file
 # csv files must have the value keyword on the row 0
@@ -44,6 +37,14 @@ def SearchKnownElementOnCsv(csvFile, row, col):
         return fileList[row][col]
 
 
+configcsv = "config.csv"
+kanjicsv = "kanji.csv"
+token = SearchElementOnCSV(configcsv, "Token", 1)
+client = commands.Bot(command_prefix="!re")
+lastKanji = "Uno"
+lastkanjireverse = "Dos"
+
+
 @client.event
 async def on_ready():
     print("Logged on as {0}!".format(client.user))
@@ -65,9 +66,9 @@ async def Facilito(ctx):
 
 def sendKanji(rorw, limit):  # 0 = Read  1 = Write
     if rorw is True:
-        keyword = SearchElementOnCSV(kanjicsv, "kanji_char", random.randint(1, limit))
-    else:
         keyword = SearchElementOnCSV(kanjicsv, "kanji_key", random.randint(1, limit))
+    else:
+        keyword = SearchElementOnCSV(kanjicsv, "kanji_char", random.randint(1, limit))
     global lastKanji
     global lastkanjireverse
     lastKanji = keyword
@@ -77,7 +78,7 @@ def sendKanji(rorw, limit):  # 0 = Read  1 = Write
 
 @client.command()
 async def kanjicompetitivor(ctx, limit: int, time: int):
-    await ctx.send(sendKanji(0, int(limit)))
+    await ctx.send(sendKanji(False, int(limit)))
     try:
         if time < 0:
             await ctx.send("number cant be a negative")
@@ -97,7 +98,7 @@ async def kanjicompetitivor(ctx, limit: int, time: int):
 
 @client.command()
 async def kanjicompetitivow(ctx, limit: int, time: int):
-    await ctx.send(sendKanji(1, int(limit)))
+    await ctx.send(sendKanji(True, int(limit)))
     try:
         if time < 0:
             await ctx.send("number cant be a negative")
