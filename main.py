@@ -5,6 +5,13 @@ import csv
 import random
 import time
 import asyncio
+import json
+
+
+def GetJsonElement(file, element):
+    with open(file) as JsonFile:
+        return json.load(JsonFile)[element]
+
 
 # This function will search an specified value on a specified csv file
 # csv files must have the value keyword on the row 0
@@ -63,9 +70,10 @@ def WriteCsv(csvFile, args):
 # fileWriter.writerow(fileContent[rowi][coll])
 
 configcsv = "config.csv"
+configjson = "config.json"
 kanjicsv = "kanji.csv"
 scorecsv = "score.csv"
-token = SearchElementOnCSV(configcsv, "Token", 1)
+token = GetJsonElement(configjson, "token")
 client = commands.Bot(command_prefix="!re")
 lastKanji = "Uno"
 lastkanjireverse = "Dos"
