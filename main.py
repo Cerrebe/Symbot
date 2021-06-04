@@ -69,7 +69,6 @@ def WriteCsv(csvFile, args):
 
 # fileWriter.writerow(fileContent[rowi][coll])
 
-configcsv = "config.csv"
 configjson = "config.json"
 kanjicsv = "kanji.csv"
 scorecsv = "score.csv"
