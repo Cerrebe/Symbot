@@ -7,7 +7,6 @@ import random
 import time
 import asyncio
 
-
 # This function will search an specified value on a specified csv file
 # csv files must have the value keyword on the row 0
 def SearchElementOnCSV(csvFile, args, row):
