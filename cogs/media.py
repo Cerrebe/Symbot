@@ -19,6 +19,9 @@ class Media(commands.Cog):
     luistoriador = "media/images/luistoriador.png"
     filetrelay = "media/images/filetrelay.jpg"
     wpcerrebe = "media/images/wpcerrebe.png"
+    bonustars = "media/images/bonustars.jpg"
+    hiddenblock = "media/images/hiddenblock.png"
+    luipadres = "media/images/luipadres.jpg"
     misteryduel = "media/images/misteryduel.jpg"
     ganerrebe = "media/images/ganerrebe.jpg"
     cerrescritorio = "media/images/cerrescritorio.png"
@@ -120,6 +123,30 @@ class Media(commands.Cog):
     )
     async def WPCerrebe(self, ctx):
         await ctx.send(file=discord.File(self.wpcerrebe))
+
+    @commands.command(
+        aliases=["bonustars", "bonusstars", "Bonusstars"],
+        brief="Sends an image",
+        description="Sends the image of Bonustars",
+    )
+    async def Bonustars(self, ctx):
+        await ctx.send(file=discord.File(self.bonustars))
+
+    @commands.command(
+        aliases=["hiddenblock", "HiddenBlock"],
+        brief="Sends an image",
+        description="Sends the image of Hiddenblock",
+    )
+    async def Hiddenblock(self, ctx):
+        await ctx.send(file=discord.File(self.hiddenblock))
+
+    @commands.command(
+        aliases=["luipadres"],
+        brief="Sends an image",
+        description="Sends the image of Luipadres",
+    )
+    async def Luipadres(self, ctx):
+        await ctx.send(file=discord.File(self.luipadres))
 
     @commands.command(
         aliases=[
