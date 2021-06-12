@@ -32,6 +32,7 @@ class Media(commands.Cog):
     symjoy = "media/videos/symjoy.mp4"
     switch = "media/videos/switch.mp4"
     typo = "media/videos/typo.mp4"
+
     # Regular Functions
 
     # Events
@@ -89,12 +90,12 @@ class Media(commands.Cog):
         await ctx.send(file=discord.File(self.impercerbero))
 
     @commands.command(
-        aliases=["dificilikong"],
+        aliases=["impercerbero"],
         brief="Sends an image",
-        description="Sends the image of Dificilikong",
+        description="Sends the image of Impercerbero",
     )
     async def Impercerbero(self, ctx):
-        await ctx.send(file=discord.File(self.dificilikong))
+        await ctx.send(file=discord.File(self.impercerbero))
 
     @commands.command(
         aliases=["luistoriador"],
@@ -135,6 +136,7 @@ class Media(commands.Cog):
             "GaneACerrebe",
             "GaneCerrebe",
             "ganecerrebe",
+            "lapiedrashapiñondermario",
         ],
         brief="Sends an image",
         description="Sends the image of Ganerrebe",

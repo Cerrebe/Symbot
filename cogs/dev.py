@@ -13,6 +13,7 @@ class Dev(commands.Cog):
     # Variables
 
     # Regular Functions
+
     # Events
     @commands.Cog.listener()
     async def on_ready(self):

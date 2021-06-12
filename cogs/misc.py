@@ -10,6 +10,7 @@ class Misc(commands.Cog):
 
     # Variables
     mpdocument = "https://docs.google.com/spreadsheets/d/1z-eeH8Q1c3uJliE5v_K_MkNDp30SVGam2cyZvDE56Oo/edit?usp=sharing"
+
     # Regular Functions
 
     # Events
