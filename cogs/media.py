@@ -137,6 +137,7 @@ class Media(commands.Cog):
             "GaneCerrebe",
             "ganecerrebe",
             "lapiedrashapiñondermario",
+            "lapiedrashapinondermario",
         ],
         brief="Sends an image",
         description="Sends the image of Ganerrebe",
