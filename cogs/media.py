@@ -20,7 +20,7 @@ class Media(commands.Cog):
     filetrelay = "media/images/filetrelay.jpg"
     wpcerrebe = "media/images/wpcerrebe.png"
     misteryduel = "media/images/misteryduel.jpg"
-    gamerrebe = "media/images/ganerrebe.jpg"
+    ganerrebe = "media/images/ganerrebe.jpg"
     cerrescritorio = "media/images/cerrescritorio.png"
     patrickmp = "media/images/patrickmp.png"
     muchokanji = "media/images/muchokanji.png"
