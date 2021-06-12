@@ -122,7 +122,12 @@ class Media(commands.Cog):
         await ctx.send(file=discord.File(self.wpcerrebe))
 
     @commands.command(
-        aliases=["misteryduel", "mistemporal"],
+        aliases=[
+            "misteryduel",
+            "mistemporal",
+            "lapiedrashapiñondermario",
+            "lapiedrashapinondermario",
+        ],
         brief="Sends an image",
         description="Sends the image of Misteryduel",
     )
@@ -136,8 +141,6 @@ class Media(commands.Cog):
             "GaneACerrebe",
             "GaneCerrebe",
             "ganecerrebe",
-            "lapiedrashapiñondermario",
-            "lapiedrashapinondermario",
         ],
         brief="Sends an image",
         description="Sends the image of Ganerrebe",
