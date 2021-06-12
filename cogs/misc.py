@@ -44,7 +44,7 @@ class Misc(commands.Cog):
         description="Sends a link to the googledocs of Mario Party",
     )
     async def MPDocument(self, ctx):
-        ctx.send(self.mpdocument)
+        await ctx.send(self.mpdocument)
 
     @commands.command(
         aliases=["di"],
