@@ -15,8 +15,12 @@ class Media(commands.Cog):
     facilimario = "media/images/facilimario.jpg"
     luiramo = "media/images/luiramo.jpg"
     impercerbero = "media/images/impercerbero.png"
+    dificilikong = "media/images/dificilikong.jpg"
+    luistoriador = "media/images/luistoriador.png"
     filetrelay = "media/images/filetrelay.jpg"
     wpcerrebe = "media/images/wpcerrebe.png"
+    misteryduel = "media/images/misteryduel.jpg"
+    gamerrebe = "media/images/ganerrebe.jpg"
     cerrescritorio = "media/images/cerrescritorio.png"
     patrickmp = "media/images/patrickmp.png"
     muchokanji = "media/images/muchokanji.png"
@@ -66,7 +70,7 @@ class Media(commands.Cog):
         description="Sends the image of Facilimario",
     )
     async def Facilimario(self, ctx):
-        await ctx.send(file=discord.File(self.Facilimario))
+        await ctx.send(file=discord.File(self.facilimario))
 
     @commands.command(
         aliases=["luiramo"],
@@ -85,6 +89,22 @@ class Media(commands.Cog):
         await ctx.send(file=discord.File(self.impercerbero))
 
     @commands.command(
+        aliases=["dificilikong"],
+        brief="Sends an image",
+        description="Sends the image of Dificilikong",
+    )
+    async def Impercerbero(self, ctx):
+        await ctx.send(file=discord.File(self.dificilikong))
+
+    @commands.command(
+        aliases=["luistoriador"],
+        brief="Sends an image",
+        description="Sends the image of Luistoriador",
+    )
+    async def Luistoriador(self, ctx):
+        await ctx.send(file=discord.File(self.luistoriador))
+
+    @commands.command(
         aliases=["filetrelay"],
         brief="Sends an image",
         description="Sends the image of Filetrelay",
@@ -99,6 +119,28 @@ class Media(commands.Cog):
     )
     async def WPCerrebe(self, ctx):
         await ctx.send(file=discord.File(self.wpcerrebe))
+
+    @commands.command(
+        aliases=["misteryduel", "mistemporal"],
+        brief="Sends an image",
+        description="Sends the image of Misteryduel",
+    )
+    async def Misteryduel(self, ctx):
+        await ctx.send(file=discord.File(self.misteryduel))
+
+    @commands.command(
+        aliases=[
+            "ganerrebe",
+            "ganeacerrebe",
+            "GaneACerrebe",
+            "GaneCerrebe",
+            "ganecerrebe",
+        ],
+        brief="Sends an image",
+        description="Sends the image of Ganerrebe",
+    )
+    async def Ganerrebe(self, ctx):
+        await ctx.send(file=discord.File(self.ganerrebe))
 
     @commands.command(
         aliases=["cerrescritorio", "cerresktop"],
