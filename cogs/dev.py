@@ -10,6 +10,9 @@ class Dev(commands.Cog):
     def __init__(self, client):
         self.client = client
 
+    # Variables
+
+    # Regular Functions
     # Events
     @commands.Cog.listener()
     async def on_ready(self):

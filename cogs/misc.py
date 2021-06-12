@@ -2,12 +2,15 @@ import discord
 from discord.ext import commands
 from discord.utils import get
 import asyncio
-from main import client as mainclient
 
 
 class Misc(commands.Cog):
     def __init__(self, client):
         self.client = client
+
+    # Variables
+    mpdocument = "https://docs.google.com/spreadsheets/d/1z-eeH8Q1c3uJliE5v_K_MkNDp30SVGam2cyZvDE56Oo/edit?usp=sharing"
+    # Regular Functions
 
     # Events
     @commands.Cog.listener()
@@ -26,22 +29,6 @@ class Misc(commands.Cog):
         )
 
     @commands.command(
-        aliases=["facilipeach"],
-        brief="Sends an image",
-        description="Sends the image of Facilipeach",
-    )
-    async def Facilipeach(self, ctx):
-        await ctx.send(file=discord.File("images/facilipeach.png"))
-
-    @commands.command(
-        aliases=["muchokanji"],
-        brief="Sends an image",
-        description="Sends the image of MuchoKanji",
-    )
-    async def MuchoKanji(self, ctx):
-        await ctx.send(file=discord.File("images/muchokanji.png"))
-
-    @commands.command(
         aliases=["symphonia"],
         brief="@Slice Juega Symphonia",
         description="Pings the role @Slice Juega Symphonia",
@@ -49,6 +36,14 @@ class Misc(commands.Cog):
     async def Symphonia(self, ctx):
         sjs = get(ctx.guild.roles, name="Slice Juega Symphonia")
         await ctx.send(sjs.mention)
+
+    @commands.command(
+        aliases=["mpdocument", "MPdocument", "Mpdocument"],
+        brief="Sends the document of Mario Party",
+        description="Sends a link to the googledocs of Mario Party",
+    )
+    async def MPDocument(self, ctx):
+        ctx.send(self.mpdocument)
 
     @commands.command(
         aliases=["di"],

@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import random
 import json
+import sys
 
 
 class Kanji(commands.Cog):
@@ -35,7 +36,7 @@ class Kanji(commands.Cog):
 
     # Commands
     @commands.command(
-        aliases=["kanjicompetitivo", "kanji"],
+        aliases=["kanjicompetitivo", "kanji", "k"],
         brief="Sends a Kanji",
         description="Sends a kanji, can be limited by heising number",
         usage="limit(optional)",
@@ -47,7 +48,7 @@ class Kanji(commands.Cog):
         self.lastKanjiID = id
 
     @commands.command(
-        aliases=["lastkanji", "kanjilast"],
+        aliases=["lastkanji", "kanjilast", "lk"],
         brief="Sends the last kanji",
         description="Sends the last kanji that has been sent by KanjiCompetitivo",
     )
@@ -58,7 +59,7 @@ class Kanji(commands.Cog):
         await ctx.send(self.GetKanjiByID(self.lastKanjiID))
 
     @commands.command(
-        aliases=["lastkanjiname", "kanjilastname", "lastname", "namelast"],
+        aliases=["lastkanjiname", "kanjilastname", "lastname", "namelast", "lkn"],
         brief="Sends the keyword of the last kanji",
         description="Sends the keyword of the last kanji that has been sent by KanjiCompetitivo",
     )
