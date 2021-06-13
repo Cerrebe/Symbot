@@ -29,7 +29,7 @@ class Media(commands.Cog):
     muchokanji = "media/images/muchokanji.png"
     frowaifu = "media/images/frowaifu.png"
     toadship = "media/gifs/toadship.gif"
-    pinged = "media/gifs/pinged"
+    pinged = "media/gifs/pinged.gif"
     slicerelay = "media/audios/slicerelay.mp3"
     amogus = "media/videos/amogus.mp4"
     symjoy = "media/videos/symjoy.mp4"
