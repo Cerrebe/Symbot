@@ -184,7 +184,7 @@ class Media(commands.Cog):
         await ctx.send(file=discord.File(self.cerrescritorio))
 
     @commands.command(
-        aliases=["patrickmp, patrickMP, Patrickmp"],
+        aliases=["patrickmp", "patrickMP", "Patrickmp"],
         brief="Sends an image",
         description="Sends the image of PatrickMP",
     )
