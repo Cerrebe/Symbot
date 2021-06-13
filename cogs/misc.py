@@ -10,6 +10,7 @@ class Misc(commands.Cog):
 
     # Variables
     mpdocument = "https://docs.google.com/spreadsheets/d/1z-eeH8Q1c3uJliE5v_K_MkNDp30SVGam2cyZvDE56Oo/edit?usp=sharing"
+    github = "https://github.com/Cerrebe/Symbot"
 
     # Regular Functions
 
@@ -45,6 +46,14 @@ class Misc(commands.Cog):
     )
     async def MPDocument(self, ctx):
         await ctx.send(self.mpdocument)
+
+    @commands.command(
+        aliases=["github", "Github", "git"],
+        brief="Sends the link of the github repository",
+        description="Sends a link to the repository of this bot",
+    )
+    async def GitHub(self, ctx):
+        await ctx.send(self.github)
 
     @commands.command(
         aliases=["di"],
