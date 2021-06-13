@@ -17,7 +17,7 @@ class Dev(commands.Cog):
     # Events
     @commands.Cog.listener()
     async def on_ready(self):
-        print("dev cogloaded")
+        print("dev cog loaded")
 
     # Commands
     @commands.command(
