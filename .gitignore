@@ -1,2 +1,5 @@
 trash.py
 __pycache__
+.vscode
+score.csv
+kanji.csv
