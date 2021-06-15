@@ -13,6 +13,7 @@ class Media(commands.Cog):
     facilicheat = "media/images/facilicheat.jpg"
     amañapeach = "media/images/amañapeach.png"
     facilimario = "media/images/facilimario.jpg"
+    faciliboo = "media/images/faciliboo.png"
     luiramo = "media/images/luiramo.jpg"
     impercerbero = "media/images/impercerbero.png"
     dificilikong = "media/images/dificilikong.jpg"
@@ -24,6 +25,8 @@ class Media(commands.Cog):
     luipadres = "media/images/luipadres.jpg"
     misteryduel = "media/images/misteryduel.jpg"
     ganerrebe = "media/images/ganerrebe.jpg"
+    trust = "media/images/trust.png"
+    choice = "media/images/choice.png"
     cerrescritorio = "media/images/cerrescritorio.png"
     patrickmp = "media/images/patrickmp.png"
     muchokanji = "media/images/muchokanji.png"
@@ -33,6 +36,8 @@ class Media(commands.Cog):
     slicerelay = "media/audios/slicerelay.mp3"
     amogus = "media/videos/amogus.mp4"
     symjoy = "media/videos/symjoy.mp4"
+    mp5enjoyer = "media/videos/mp5enjoyer.mp4"
+    traumas = "media/videos/traumas.mp4"
     switch = "media/videos/switch.mp4"
     typo = "media/videos/typo.mp4"
 
@@ -75,6 +80,14 @@ class Media(commands.Cog):
     )
     async def Facilimario(self, ctx):
         await ctx.send(file=discord.File(self.facilimario))
+
+    @commands.command(
+        aliases=["faciliboo"],
+        brief="Sends an image",
+        description="Sends the image of Faciliboo",
+    )
+    async def Faciliboo(self, ctx):
+        await ctx.send(file=discord.File(self.faciliboo))
 
     @commands.command(
         aliases=["luiramo"],
@@ -176,6 +189,22 @@ class Media(commands.Cog):
         await ctx.send(file=discord.File(self.ganerrebe))
 
     @commands.command(
+        aliases=["trust", "confianza"],
+        brief="Sends an image",
+        description="Sends the image of Trust",
+    )
+    async def Trust(self, ctx):
+        await ctx.send(file=discord.File(self.trust))
+
+    @commands.command(
+        aliases=["choice"],
+        brief="Sends an image",
+        description="Sends the image of Choice",
+    )
+    async def Choice(self, ctx):
+        await ctx.send(file=discord.File(self.choice))
+
+    @commands.command(
         aliases=["cerrescritorio", "cerresktop"],
         brief="Sends an image",
         description="Sends the image of Cerrescritorio",
@@ -252,6 +281,22 @@ class Media(commands.Cog):
     )
     async def Symjoy(self, ctx):
         await ctx.send(file=discord.File(self.symjoy))
+
+    @commands.command(
+        aliases=["mp5enjoyer", "MP5enjoyer"],
+        brief="Sends a video",
+        description="Sends the video of MP5Enjoyer",
+    )
+    async def MP5Enjoyer(self, ctx):
+        await ctx.send(file=discord.File(self.mp5enjoyer))
+
+    @commands.command(
+        aliases=["traumas", "trauma", "Trauma"],
+        brief="Sends a video",
+        description="Sends the video of Traumas",
+    )
+    async def Traumas(self, ctx):
+        await ctx.send(file=discord.File(self.traumas))
 
     @commands.command(
         aliases=["switch"],
