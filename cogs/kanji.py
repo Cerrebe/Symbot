@@ -15,7 +15,6 @@ class Kanji(commands.Cog):
     kanjijson = "kanji.json"
     with open(kanjijson, "r", encoding="utf8") as JsonFile:
         kanjidata = json.load(JsonFile)
-    # lastKanjiID = None
 
     # Regular Functions
     def GetKanjiByID(self, id):
