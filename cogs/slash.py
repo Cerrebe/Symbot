@@ -5,7 +5,6 @@ from discord_slash import cog_ext, SlashContext
 import json
 import random
 import asyncio
-import sys
 from main import GetLastKanjiID
 from main import SetLastKanjiID
 

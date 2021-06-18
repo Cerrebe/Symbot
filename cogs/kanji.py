@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 import random
 import json
-import sys
 from main import GetLastKanjiID
 from main import SetLastKanjiID
 
