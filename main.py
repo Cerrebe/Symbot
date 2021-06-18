@@ -1,8 +1,6 @@
 import discord
 from discord.channel import DMChannel
 from discord.ext import commands
-from discord.utils import get
-from discord import DMChannel
 from discord_slash import SlashCommand
 import json
 import os
