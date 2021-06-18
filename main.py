@@ -3,6 +3,7 @@ from discord.channel import DMChannel
 from discord.ext import commands
 from discord.utils import get
 from discord import DMChannel
+from discord_slash import SlashCommand
 import json
 import os
 
@@ -17,6 +18,7 @@ devs = [212620735754010624]
 configjson = "config.json"
 token = GetJsonElement(configjson, "token")
 client = commands.Bot(command_prefix="!re")
+slash = SlashCommand(client, sync_commands=True, sync_on_cog_reload=True)
 
 # Regular Functions
 async def AddReaction(ctx, emojis):
@@ -31,12 +33,6 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if "$!#" in message.content and message.author == client.user:
-        editedmsg = message.content.replace("$!#", "")
-        await message.edit(content=editedmsg)
-        await AddReaction(message, "⬆️")
-        await AddReaction(message, "⬇️")
-
     if "!reFacilipeach" in message.content and message.author == client.user:
         await message.channel.send(file=discord.File("images/facilipeach.png"))
     #    if message.author == client.user:

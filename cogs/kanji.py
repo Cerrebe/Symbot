@@ -48,6 +48,18 @@ class Kanji(commands.Cog):
         self.lastKanjiID = id
 
     @commands.command(
+        aliases=["kanjicompetitivor", "kanjir", "kr"],
+        brief="Sends the keyword of a kanji",
+        description="Sends a keyword of a kanji, can be limited by heising number",
+        usage="limit(optional)",
+    )
+    async def KanjiCompetitivoR(self, ctx, limit: int = 2041):
+        limit -= 1
+        id = random.randint(0, limit)
+        await ctx.send(self.GetKanjiName(self.GetKanjiByID(id)))
+        self.lastKanjiID = id
+
+    @commands.command(
         aliases=["lastkanji", "kanjilast", "lk"],
         brief="Sends the last kanji",
         description="Sends the last kanji that has been sent by KanjiCompetitivo",
