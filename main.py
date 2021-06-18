@@ -20,9 +20,22 @@ token = GetJsonElement(configjson, "token")
 client = commands.Bot(command_prefix="!re")
 slash = SlashCommand(client, sync_commands=True, sync_on_cog_reload=True)
 
+global lastKanjiID
+lastKanjiID = None
+
 # Regular Functions
 async def AddReaction(ctx, emojis):
     await ctx.add_reaction(emojis)
+
+
+def GetLastKanjiID():
+    global lastKanjiID
+    return lastKanjiID
+
+
+def SetLastKanjiID(value):
+    global lastKanjiID
+    lastKanjiID = value
 
 
 # Events

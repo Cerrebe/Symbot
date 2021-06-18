@@ -3,6 +3,8 @@ from discord.ext import commands
 import random
 import json
 import sys
+from main import GetLastKanjiID
+from main import SetLastKanjiID
 
 
 class Kanji(commands.Cog):
@@ -13,7 +15,7 @@ class Kanji(commands.Cog):
     kanjijson = "kanji.json"
     with open(kanjijson, "r", encoding="utf8") as JsonFile:
         kanjidata = json.load(JsonFile)
-    lastKanjiID = None
+    # lastKanjiID = None
 
     # Regular Functions
     def GetKanjiByID(self, id):
@@ -45,7 +47,7 @@ class Kanji(commands.Cog):
         limit -= 1
         id = random.randint(0, limit)
         await ctx.send(self.GetKanjiByID(id))
-        self.lastKanjiID = id
+        SetLastKanjiID(id)
 
     @commands.command(
         aliases=["kanjicompetitivor", "kanjir", "kr"],
@@ -57,7 +59,7 @@ class Kanji(commands.Cog):
         limit -= 1
         id = random.randint(0, limit)
         await ctx.send(self.GetKanjiName(self.GetKanjiByID(id)))
-        self.lastKanjiID = id
+        SetLastKanjiID(id)
 
     @commands.command(
         aliases=["lastkanji", "kanjilast", "lk"],
@@ -65,10 +67,10 @@ class Kanji(commands.Cog):
         description="Sends the last kanji that has been sent by KanjiCompetitivo",
     )
     async def LastKanji(self, ctx):
-        if self.lastKanjiID == None:
+        if GetLastKanjiID() == None:
             await ctx.send("No kanji was sent recently")
             return
-        await ctx.send(self.GetKanjiByID(self.lastKanjiID))
+        await ctx.send(self.GetKanjiByID(GetLastKanjiID()))
 
     @commands.command(
         aliases=["lastkanjiname", "kanjilastname", "lastname", "namelast", "lkn"],
@@ -76,10 +78,10 @@ class Kanji(commands.Cog):
         description="Sends the keyword of the last kanji that has been sent by KanjiCompetitivo",
     )
     async def LastKanjiName(self, ctx):
-        if self.lastKanjiID == None:
+        if GetLastKanjiID() == None:
             await ctx.send("No kanji was sent recently")
             return
-        await ctx.send(self.GetKanjiName(self.GetKanjiByID(self.lastKanjiID)))
+        await ctx.send(self.GetKanjiName(self.GetKanjiByID(GetLastKanjiID())))
 
 
 def setup(client):

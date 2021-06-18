@@ -1,11 +1,13 @@
 import discord
 from discord.ext import commands
-from discord.ext.commands.core import command
 from discord.utils import get
-from discord_slash import SlashCommand, cog_ext, SlashContext
+from discord_slash import cog_ext, SlashContext
 import json
 import random
 import asyncio
+import sys
+from main import GetLastKanjiID
+from main import SetLastKanjiID
 
 
 class Slash(commands.Cog):
@@ -16,7 +18,6 @@ class Slash(commands.Cog):
     kanjijson = "kanji.json"
     with open(kanjijson, "r", encoding="utf8") as JsonFile:
         kanjidata = json.load(JsonFile)
-    lastKanjiID = None
 
     mpdocument = "https://docs.google.com/spreadsheets/d/1z-eeH8Q1c3uJliE5v_K_MkNDp30SVGam2cyZvDE56Oo/edit?usp=sharing"
     github = "https://github.com/Cerrebe/Symbot"
@@ -80,7 +81,7 @@ class Slash(commands.Cog):
         limit -= 1
         id = random.randint(0, limit)
         await ctx.send(self.GetKanjiByID(id))
-        self.lastKanjiID = id
+        SetLastKanjiID(id)
 
     @cog_ext.cog_slash(
         description="Sends a keyword of a kanji, can be limited by heising number",
@@ -89,25 +90,25 @@ class Slash(commands.Cog):
         limit -= 1
         id = random.randint(0, limit)
         await ctx.send(self.GetKanjiName(self.GetKanjiByID(id)))
-        self.lastKanjiID = id
+        SetLastKanjiID(id)
 
     @cog_ext.cog_slash(
         description="Sends the last kanji that has been sent by KanjiCompetitivo",
     )
     async def LastKanji(self, ctx: SlashContext):
-        if self.lastKanjiID == None:
+        if GetLastKanjiID() == None:
             await ctx.send("No kanji was sent recently")
             return
-        await ctx.send(self.GetKanjiByID(self.lastKanjiID))
+        await ctx.send(self.GetKanjiByID(GetLastKanjiID()))
 
     @cog_ext.cog_slash(
         description="Sends the keyword of the last kanji that has been sent by KanjiCompetitivo",
     )
     async def LastKanjiName(self, ctx: SlashContext):
-        if self.lastKanjiID == None:
+        if GetLastKanjiID() == None:
             await ctx.send("No kanji was sent recently")
             return
-        await ctx.send(self.GetKanjiName(self.GetKanjiByID(self.lastKanjiID)))
+        await ctx.send(self.GetKanjiName(self.GetKanjiByID(GetLastKanjiID())))
 
     @cog_ext.cog_slash(
         description="Sends the ASCII Art of Facilito",
