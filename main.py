@@ -1,4 +1,5 @@
 import discord
+from discord.activity import Game
 from discord.channel import DMChannel
 from discord.ext import commands
 from discord.utils import get
