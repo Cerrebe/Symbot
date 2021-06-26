@@ -42,9 +42,10 @@ def SetLastKanjiID(value):
 # Events
 @client.event
 async def on_ready():
-    client.change_presence(
-        activity=Game("!re for commands, / for slash commands, !rehelp for help"),
-        status=discord.Status.idle,
+    await client.change_presence(
+        activity=Game("!rehelp !reCommand /Command"),
+        status=discord.Status.online,
+        afk=False,
     )
     print("Logged on as {0}!".format(client.user))
 
