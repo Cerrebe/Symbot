@@ -21,6 +21,7 @@ class Slash(commands.Cog):
     mpdocument = "https://docs.google.com/spreadsheets/d/1z-eeH8Q1c3uJliE5v_K_MkNDp30SVGam2cyZvDE56Oo/edit?usp=sharing"
     github = "https://github.com/Cerrebe/Symbot"
 
+    panconparty = "media/images/panconparty.png"
     facilipeach = "media/images/facilipeach.png"
     facilicheat = "media/images/facilicheat.jpg"
     amañapeach = "media/images/amañapeach.png"
@@ -41,6 +42,8 @@ class Slash(commands.Cog):
     choice = "media/images/choice.png"
     cerrescritorio = "media/images/cerrescritorio.png"
     patrickmp = "media/images/patrickmp.png"
+    cachonda = "media/images/cachonda.jpg"
+    expose = "media/images/expose.png"
     muchokanji = "media/images/muchokanji.png"
     frowaifu = "media/images/frowaifu.png"
     toadship = "media/gifs/toadship.gif"
@@ -50,6 +53,7 @@ class Slash(commands.Cog):
     symjoy = "media/videos/symjoy.mp4"
     mp5enjoyer = "media/videos/mp5enjoyer.mp4"
     traumas = "media/videos/traumas.mp4"
+    luifoxfg = "media/videos/luifoxfg.mp4"
     switch = "media/videos/switch.mp4"
     typo = "media/videos/typo.mp4"
 
@@ -161,6 +165,12 @@ class Slash(commands.Cog):
 
         except ValueError:
             await ctx.send("time was not a number")
+
+    @cog_ext.cog_slash(
+        description="Sends the image of PanConParty",
+    )
+    async def PanConParty(self, ctx):
+        await ctx.send(file=discord.File(self.panconparty))
 
     @cog_ext.cog_slash(
         description="Sends the image of Facilipeach",
@@ -283,6 +293,18 @@ class Slash(commands.Cog):
         await ctx.send(file=discord.File(self.patrickmp))
 
     @cog_ext.cog_slash(
+        description="Sends the image of Cachonda",
+    )
+    async def Cachonda(self, ctx):
+        await ctx.send(file=discord.File(self.cachonda))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of Expose",
+    )
+    async def Expose(self, ctx):
+        await ctx.send(file=discord.File(self.expose))
+
+    @cog_ext.cog_slash(
         description="Sends the image of MuchoKanji",
     )
     async def MuchoKanji(self, ctx: SlashContext):
@@ -335,6 +357,12 @@ class Slash(commands.Cog):
     )
     async def Traumas(self, ctx: SlashContext):
         await ctx.send(file=discord.File(self.traumas))
+
+    @cog_ext.cog_slash(
+        description="Sends the video of Luifoxfg",
+    )
+    async def Luifoxfg(self, ctx):
+        await ctx.send(file=discord.File(self.luifoxfg))
 
     @cog_ext.cog_slash(
         description="Sends the video of Switch",

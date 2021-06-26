@@ -1,0 +1,40 @@
+Date : 2021-06-26 16:13:26
+Directory : c:\Users\Cerrebe\Documents\GitHub\Symbot
+Total : 11 files,  40223 codes, 27 comments, 168 blanks, all 40418 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| JSON               |          2 |     39,268 |          0 |          1 |     39,269 |
+| Python             |          6 |        900 |         27 |        166 |      1,093 |
+| pip requirements   |          1 |         45 |          0 |          0 |         45 |
+| JSON with Comments |          1 |          8 |          0 |          0 |          8 |
+| Markdown           |          1 |          2 |          0 |          1 |          3 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                  | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                     |         11 |     40,223 |         27 |        168 |     40,418 |
+| cogs                                                                  |          6 |        839 |         20 |        141 |      1,000 |
++-----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                              | language           | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| c:\Users\Cerrebe\Documents\GitHub\Symbot\README.md                    | Markdown           |          2 |          0 |          1 |          3 |
+| c:\Users\Cerrebe\Documents\GitHub\Symbot\cogs\SymbotWS.code-workspace | JSON with Comments |          8 |          0 |          0 |          8 |
+| c:\Users\Cerrebe\Documents\GitHub\Symbot\cogs\dev.py                  | Python             |         47 |          4 |         10 |         61 |
+| c:\Users\Cerrebe\Documents\GitHub\Symbot\cogs\kanji.py                | Python             |         69 |          4 |         14 |         87 |
+| c:\Users\Cerrebe\Documents\GitHub\Symbot\cogs\media.py                | Python             |        309 |          4 |         43 |        356 |
+| c:\Users\Cerrebe\Documents\GitHub\Symbot\cogs\misc.py                 | Python             |         86 |          4 |         16 |        106 |
+| c:\Users\Cerrebe\Documents\GitHub\Symbot\cogs\slash.py                | Python             |        320 |          4 |         58 |        382 |
+| c:\Users\Cerrebe\Documents\GitHub\Symbot\config.json                  | JSON               |          0 |          0 |          1 |          1 |
+| c:\Users\Cerrebe\Documents\GitHub\Symbot\kanji.json                   | JSON               |     39,268 |          0 |          0 |     39,268 |
+| c:\Users\Cerrebe\Documents\GitHub\Symbot\main.py                      | Python             |         69 |          7 |         25 |        101 |
+| c:\Users\Cerrebe\Documents\GitHub\Symbot\requirements.txt             | pip requirements   |         45 |          0 |          0 |         45 |
+| Total                                                                 |                    |     40,223 |         27 |        168 |     40,418 |
++-----------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
