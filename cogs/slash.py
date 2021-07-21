@@ -423,6 +423,12 @@ class Slash(commands.Cog):
         await ctx.send(file=discord.File(mediavars.pinged))
 
     @cog_ext.cog_slash(
+        description="Sends the gif of Follar",
+    )
+    async def Follar(self, ctx: SlashContext):
+        await ctx.send(file=discord.File(mediavars.follar))
+
+    @cog_ext.cog_slash(
         description="Sends the audio of Slicerelay",
     )
     async def Slicerelay(self, ctx: SlashContext):

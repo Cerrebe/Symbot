@@ -418,6 +418,14 @@ class Media(commands.Cog):
         await ctx.send(file=discord.File(mediavars.pinged))
 
     @commands.command(
+        aliases=["follar"],
+        brief="Sends a gif",
+        description="Sends the gif of Follar",
+    )
+    async def Follar(self, ctx):
+        await ctx.send(file=discord.File(mediavars.follar))
+
+    @commands.command(
         aliases=["slicerelay", "SliceRelay"],
         brief="Sends an audio",
         description="Sends the audio of Slicerelay",
