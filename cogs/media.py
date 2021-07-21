@@ -39,6 +39,14 @@ class Media(commands.Cog):
         await ctx.send(file=discord.File(mediavars.panconpartypaint))
 
     @commands.command(
+        aliases=["friendship", "amistad", "Amistad"],
+        brief="Sends an image",
+        description="Sends the image of Friendship",
+    )
+    async def Friendship(self, ctx):
+        await ctx.send(file=discord.File(mediavars.friendship))
+
+    @commands.command(
         aliases=["logo"],
         brief="Sends an image",
         description="Sends the image of Logo",
