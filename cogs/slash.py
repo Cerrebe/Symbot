@@ -387,6 +387,12 @@ class Slash(commands.Cog):
         await ctx.send(file=discord.File(mediavars.viernesnoche))
 
     @cog_ext.cog_slash(
+        description="Sends the image of BowserAkello",
+    )
+    async def BowserAkello(self, ctx):
+        await ctx.send(file=discord.File(mediavars.bowserakello))
+
+    @cog_ext.cog_slash(
         description="Sends the image of MuchoKanji",
     )
     async def MuchoKanji(self, ctx: SlashContext):

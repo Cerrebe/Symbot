@@ -370,6 +370,14 @@ class Media(commands.Cog):
         await ctx.send(file=discord.File(mediavars.viernesnoche))
 
     @commands.command(
+        aliases=["bowserakello", "Bowserakello"],
+        brief="Sends an image",
+        description="Sends the image of BowserAkello",
+    )
+    async def BowserAkello(self, ctx):
+        await ctx.send(file=discord.File(mediavars.bowserakello))
+
+    @commands.command(
         aliases=["muchokanji"],
         brief="Sends an image",
         description="Sends the image of MuchoKanji",
