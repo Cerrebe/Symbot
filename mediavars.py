@@ -61,3 +61,4 @@ rajoypensar = "media/videos/rajoypensar.mp4"
 sympinged = "media/videos/sympinged.mp4"
 switch = "media/videos/switch.mp4"
 typo = "media/videos/typo.mp4"
+
