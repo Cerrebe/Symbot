@@ -2,48 +2,17 @@ import discord
 from discord.ext import commands
 from discord.utils import get
 import asyncio
+import sys
+
+sys.path.insert(1, "/mediavars.py")
+import mediavars
 
 
 class Media(commands.Cog):
     def __init__(self, client):
-        self.client = client
+        mediavars.client = client
 
     # Variables
-    panconparty = "media/images/panconparty.png"
-    facilipeach = "media/images/facilipeach.png"
-    facilicheat = "media/images/facilicheat.jpg"
-    amañapeach = "media/images/amañapeach.png"
-    facilimario = "media/images/facilimario.jpg"
-    faciliboo = "media/images/faciliboo.png"
-    luiramo = "media/images/luiramo.jpg"
-    impercerbero = "media/images/impercerbero.png"
-    dificilikong = "media/images/dificilikong.jpg"
-    luistoriador = "media/images/luistoriador.png"
-    filetrelay = "media/images/filetrelay.jpg"
-    wpcerrebe = "media/images/wpcerrebe.png"
-    bonustars = "media/images/bonustars.jpg"
-    hiddenblock = "media/images/hiddenblock.png"
-    luipadres = "media/images/luipadres.jpg"
-    misteryduel = "media/images/misteryduel.jpg"
-    ganerrebe = "media/images/ganerrebe.jpg"
-    trust = "media/images/trust.png"
-    choice = "media/images/choice.png"
-    cerrescritorio = "media/images/cerrescritorio.png"
-    patrickmp = "media/images/patrickmp.png"
-    cachonda = "media/images/cachonda.jpg"
-    expose = "media/images/expose.png"
-    muchokanji = "media/images/muchokanji.png"
-    frowaifu = "media/images/frowaifu.png"
-    toadship = "media/gifs/toadship.gif"
-    pinged = "media/gifs/pinged.gif"
-    slicerelay = "media/audios/slicerelay.mp3"
-    amogus = "media/videos/amogus.mp4"
-    symjoy = "media/videos/symjoy.mp4"
-    mp5enjoyer = "media/videos/mp5enjoyer.mp4"
-    traumas = "media/videos/traumas.mp4"
-    luifoxfg = "media/videos/luifoxfg.mp4"
-    switch = "media/videos/switch.mp4"
-    typo = "media/videos/typo.mp4"
 
     # Regular Functions
 
@@ -54,12 +23,36 @@ class Media(commands.Cog):
 
     # Commands
     @commands.command(
-        aliases=["panconparty", "PanconParty", "partycontrigo"],
+        aliases=["panconparty", "PanconParty"],
         brief="Sends an image",
         description="Sends the image of PanConParty",
     )
     async def PanConParty(self, ctx):
-        await ctx.send(file=discord.File(self.panconparty))
+        await ctx.send(file=discord.File(mediavars.panconparty))
+
+    @commands.command(
+        aliases=["panconpartypaint", "PanconPartyPaint"],
+        brief="Sends an image",
+        description="Sends the image of PanConPartyPaint",
+    )
+    async def PanConPartyPaint(self, ctx):
+        await ctx.send(file=discord.File(mediavars.panconpartypaint))
+
+    @commands.command(
+        aliases=["logo"],
+        brief="Sends an image",
+        description="Sends the image of Logo",
+    )
+    async def Logo(self, ctx):
+        await ctx.send(file=discord.File(mediavars.logo))
+
+    @commands.command(
+        aliases=["peachparty", "Peachparty"],
+        brief="Sends an image",
+        description="Sends the image of PeachParty",
+    )
+    async def PeachParty(self, ctx):
+        await ctx.send(file=discord.File(mediavars.peachparty))
 
     @commands.command(
         aliases=["facilipeach"],
@@ -67,7 +60,7 @@ class Media(commands.Cog):
         description="Sends the image of Facilipeach",
     )
     async def Facilipeach(self, ctx):
-        await ctx.send(file=discord.File(self.facilipeach))
+        await ctx.send(file=discord.File(mediavars.facilipeach))
 
     @commands.command(
         aliases=["facilicheat"],
@@ -75,7 +68,7 @@ class Media(commands.Cog):
         description="Sends the image of Facilicheat",
     )
     async def Facilicheat(self, ctx):
-        await ctx.send(file=discord.File(self.facilicheat))
+        await ctx.send(file=discord.File(mediavars.facilicheat))
 
     @commands.command(
         aliases=["amañapeach"],
@@ -83,7 +76,7 @@ class Media(commands.Cog):
         description="Sends the image of Amañapeach",
     )
     async def Amañapeach(self, ctx):
-        await ctx.send(file=discord.File(self.amañapeach))
+        await ctx.send(file=discord.File(mediavars.amañapeach))
 
     @commands.command(
         aliases=["facilimario"],
@@ -91,7 +84,7 @@ class Media(commands.Cog):
         description="Sends the image of Facilimario",
     )
     async def Facilimario(self, ctx):
-        await ctx.send(file=discord.File(self.facilimario))
+        await ctx.send(file=discord.File(mediavars.facilimario))
 
     @commands.command(
         aliases=["faciliboo"],
@@ -99,7 +92,31 @@ class Media(commands.Cog):
         description="Sends the image of Faciliboo",
     )
     async def Faciliboo(self, ctx):
-        await ctx.send(file=discord.File(self.faciliboo))
+        await ctx.send(file=discord.File(mediavars.faciliboo))
+
+    @commands.command(
+        aliases=["faciliwario"],
+        brief="Sends an image",
+        description="Sends the image of Faciliwario",
+    )
+    async def Faciliwario(self, ctx):
+        await ctx.send(file=discord.File(mediavars.faciliwario))
+
+    @commands.command(
+        aliases=["faciliyoshi"],
+        brief="Sends an image",
+        description="Sends the image of Faciliyoshi",
+    )
+    async def Faciliyoshi(self, ctx):
+        await ctx.send(file=discord.File(mediavars.faciliyoshi))
+
+    @commands.command(
+        aliases=["facilitoad"],
+        brief="Sends an image",
+        description="Sends the image of Facilitoad",
+    )
+    async def Facilitoad(self, ctx):
+        await ctx.send(file=discord.File(mediavars.facilitoad))
 
     @commands.command(
         aliases=["luiramo"],
@@ -107,7 +124,7 @@ class Media(commands.Cog):
         description="Sends the image of Luiramo",
     )
     async def Luiramo(self, ctx):
-        await ctx.send(file=discord.File(self.luiramo))
+        await ctx.send(file=discord.File(mediavars.luiramo))
 
     @commands.command(
         aliases=["impercerbero", "imperiocancerbero"],
@@ -115,7 +132,7 @@ class Media(commands.Cog):
         description="Sends the image of Impercerbero",
     )
     async def Impercerbero(self, ctx):
-        await ctx.send(file=discord.File(self.impercerbero))
+        await ctx.send(file=discord.File(mediavars.impercerbero))
 
     @commands.command(
         aliases=["impercerbero"],
@@ -123,7 +140,23 @@ class Media(commands.Cog):
         description="Sends the image of Impercerbero",
     )
     async def Impercerbero(self, ctx):
-        await ctx.send(file=discord.File(self.impercerbero))
+        await ctx.send(file=discord.File(mediavars.impercerbero))
+
+    @commands.command(
+        aliases=["dificilikong"],
+        brief="Sends an image",
+        description="Sends the image of Dificilikong",
+    )
+    async def Dificilikong(self, ctx):
+        await ctx.send(file=discord.File(mediavars.dificilikong))
+
+    @commands.command(
+        aliases=["peterilito"],
+        brief="Sends an image",
+        description="Sends the image of Peterilito",
+    )
+    async def Peterilito(self, ctx):
+        await ctx.send(file=discord.File(mediavars.peterilito))
 
     @commands.command(
         aliases=["luistoriador"],
@@ -131,7 +164,7 @@ class Media(commands.Cog):
         description="Sends the image of Luistoriador",
     )
     async def Luistoriador(self, ctx):
-        await ctx.send(file=discord.File(self.luistoriador))
+        await ctx.send(file=discord.File(mediavars.luistoriador))
 
     @commands.command(
         aliases=["filetrelay"],
@@ -139,7 +172,7 @@ class Media(commands.Cog):
         description="Sends the image of Filetrelay",
     )
     async def Filetrelay(self, ctx):
-        await ctx.send(file=discord.File(self.filetrelay))
+        await ctx.send(file=discord.File(mediavars.filetrelay))
 
     @commands.command(
         aliases=["wpcerrebe", "WPcerrebe", "Wpcerrebe", "bienjugadocerrebe"],
@@ -147,7 +180,7 @@ class Media(commands.Cog):
         description="Sends the image of WPCerrebe",
     )
     async def WPCerrebe(self, ctx):
-        await ctx.send(file=discord.File(self.wpcerrebe))
+        await ctx.send(file=discord.File(mediavars.wpcerrebe))
 
     @commands.command(
         aliases=["bonustars", "bonusstars", "Bonusstars"],
@@ -155,7 +188,7 @@ class Media(commands.Cog):
         description="Sends the image of Bonustars",
     )
     async def Bonustars(self, ctx):
-        await ctx.send(file=discord.File(self.bonustars))
+        await ctx.send(file=discord.File(mediavars.bonustars))
 
     @commands.command(
         aliases=["hiddenblock", "HiddenBlock"],
@@ -163,7 +196,7 @@ class Media(commands.Cog):
         description="Sends the image of Hiddenblock",
     )
     async def Hiddenblock(self, ctx):
-        await ctx.send(file=discord.File(self.hiddenblock))
+        await ctx.send(file=discord.File(mediavars.hiddenblock))
 
     @commands.command(
         aliases=["luipadres"],
@@ -171,7 +204,7 @@ class Media(commands.Cog):
         description="Sends the image of Luipadres",
     )
     async def Luipadres(self, ctx):
-        await ctx.send(file=discord.File(self.luipadres))
+        await ctx.send(file=discord.File(mediavars.luipadres))
 
     @commands.command(
         aliases=[
@@ -184,7 +217,7 @@ class Media(commands.Cog):
         description="Sends the image of Misteryduel",
     )
     async def Misteryduel(self, ctx):
-        await ctx.send(file=discord.File(self.misteryduel))
+        await ctx.send(file=discord.File(mediavars.misteryduel))
 
     @commands.command(
         aliases=[
@@ -198,7 +231,7 @@ class Media(commands.Cog):
         description="Sends the image of Ganerrebe",
     )
     async def Ganerrebe(self, ctx):
-        await ctx.send(file=discord.File(self.ganerrebe))
+        await ctx.send(file=discord.File(mediavars.ganerrebe))
 
     @commands.command(
         aliases=["trust", "confianza"],
@@ -206,7 +239,7 @@ class Media(commands.Cog):
         description="Sends the image of Trust",
     )
     async def Trust(self, ctx):
-        await ctx.send(file=discord.File(self.trust))
+        await ctx.send(file=discord.File(mediavars.trust))
 
     @commands.command(
         aliases=["choice"],
@@ -214,7 +247,7 @@ class Media(commands.Cog):
         description="Sends the image of Choice",
     )
     async def Choice(self, ctx):
-        await ctx.send(file=discord.File(self.choice))
+        await ctx.send(file=discord.File(mediavars.choice))
 
     @commands.command(
         aliases=["cerrescritorio", "cerresktop"],
@@ -222,7 +255,7 @@ class Media(commands.Cog):
         description="Sends the image of Cerrescritorio",
     )
     async def Cerrescritorio(self, ctx):
-        await ctx.send(file=discord.File(self.cerrescritorio))
+        await ctx.send(file=discord.File(mediavars.cerrescritorio))
 
     @commands.command(
         aliases=["patrickmp", "patrickMP", "Patrickmp"],
@@ -230,7 +263,7 @@ class Media(commands.Cog):
         description="Sends the image of PatrickMP",
     )
     async def PatrickMP(self, ctx):
-        await ctx.send(file=discord.File(self.patrickmp))
+        await ctx.send(file=discord.File(mediavars.patrickmp))
 
     @commands.command(
         aliases=["cachonda", "viejacachonda"],
@@ -238,15 +271,103 @@ class Media(commands.Cog):
         description="Sends the image of Cachonda",
     )
     async def Cachonda(self, ctx):
-        await ctx.send(file=discord.File(self.cachonda))
+        await ctx.send(file=discord.File(mediavars.cachonda))
 
     @commands.command(
-        aliases=["expose"],
+        aliases=["luiexpose"],
         brief="Sends an image",
-        description="Sends the image of Expose",
+        description="Sends the image of Luiexpose",
     )
-    async def Expose(self, ctx):
-        await ctx.send(file=discord.File(self.expose))
+    async def Luiexpose(self, ctx):
+        await ctx.send(file=discord.File(mediavars.luiexpose))
+
+    @commands.command(
+        aliases=["luiexpose2"],
+        brief="Sends an image",
+        description="Sends the image of Luiexpose2",
+    )
+    async def Luiexpose2(self, ctx):
+        await ctx.send(file=discord.File(mediavars.luiexpose2))
+
+    @commands.command(
+        aliases=["cheatrade"],
+        brief="Sends an image",
+        description="Sends the image of Cheatrade",
+    )
+    async def Cheatrade(self, ctx):
+        await ctx.send(file=discord.File(mediavars.cheatrade))
+
+    @commands.command(
+        aliases=["claramente"],
+        brief="Sends an image",
+        description="Sends the image of Claramente",
+    )
+    async def Claramente(self, ctx):
+        await ctx.send(file=discord.File(mediavars.claramente))
+
+    @commands.command(
+        aliases=["dinklerrebe"],
+        brief="Sends an image",
+        description="Sends the image of Dinklerrebe",
+    )
+    async def Dinklerrebe(self, ctx):
+        await ctx.send(file=discord.File(mediavars.dinklerrebe))
+
+    @commands.command(
+        aliases=["ememp"],
+        brief="Sends an image",
+        description="Sends the image of Ememp",
+    )
+    async def Ememp(self, ctx):
+        await ctx.send(file=discord.File(mediavars.ememp))
+
+    @commands.command(
+        aliases=["mcflurry", "Mcflurry"],
+        brief="Sends an image",
+        description="Sends the image of McFlurry",
+    )
+    async def McFlurry(self, ctx):
+        await ctx.send(file=discord.File(mediavars.mcflurry))
+
+    @commands.command(
+        aliases=["miyazakimp"],
+        brief="Sends an image",
+        description="Sends the image of Miyazakimp",
+    )
+    async def Miyazakimp(self, ctx):
+        await ctx.send(file=discord.File(mediavars.miyazakimp))
+
+    @commands.command(
+        aliases=["neverchancetime", "Neverchancetime"],
+        brief="Sends an image",
+        description="Sends the image of NeverChanceTime",
+    )
+    async def NeverChanceTime(self, ctx):
+        await ctx.send(file=discord.File(mediavars.neverchancetime))
+
+    @commands.command(
+        aliases=["nobitapistol", "Nobitapistol"],
+        brief="Sends an image",
+        description="Sends the image of NobitaPistol",
+    )
+    async def NobitaPistol(self, ctx):
+        await ctx.send(file=discord.File(mediavars.nobitapistol))
+
+    @commands.command(
+        aliases=["pozoaceptacion"],
+        brief="Sends an image",
+        description="Sends the image of Pozoaceptacion",
+    )
+    async def Pozoaceptacion(self, ctx):
+        await ctx.send(file=discord.File(mediavars.pozoaceptacion))
+
+    @commands.command(
+        aliases=["viernesnoche", "Viernesnoche"],
+        brief="Sends an image",
+        description="Sends the image of ViernesNoche",
+    )
+    async def ViernesNoche(self, ctx):
+        await ctx.send(file=discord.File(mediavars.viernesnoche))
 
     @commands.command(
         aliases=["muchokanji"],
@@ -254,7 +375,7 @@ class Media(commands.Cog):
         description="Sends the image of MuchoKanji",
     )
     async def MuchoKanji(self, ctx):
-        await ctx.send(file=discord.File(self.muchokanji))
+        await ctx.send(file=discord.File(mediavars.muchokanji))
 
     @commands.command(
         aliases=["frowaifu"],
@@ -262,7 +383,7 @@ class Media(commands.Cog):
         description="Sends the image of Frowaifu",
     )
     async def Frowaifu(self, ctx):
-        await ctx.send(file=discord.File(self.frowaifu))
+        await ctx.send(file=discord.File(mediavars.frowaifu))
 
     @commands.command(
         aliases=["toadship", "ToadShip"],
@@ -270,7 +391,7 @@ class Media(commands.Cog):
         description="Sends the gif of Toadship",
     )
     async def Toadship(self, ctx):
-        await ctx.send(file=discord.File(self.toadship))
+        await ctx.send(file=discord.File(mediavars.toadship))
 
     @commands.command(
         aliases=["pinged"],
@@ -278,7 +399,7 @@ class Media(commands.Cog):
         description="Sends the gif of Pinged",
     )
     async def Pinged(self, ctx):
-        await ctx.send(file=discord.File(self.pinged))
+        await ctx.send(file=discord.File(mediavars.pinged))
 
     @commands.command(
         aliases=["slicerelay", "SliceRelay"],
@@ -286,7 +407,7 @@ class Media(commands.Cog):
         description="Sends the audio of Slicerelay",
     )
     async def Slicerelay(self, ctx):
-        await ctx.send(file=discord.File(self.slicerelay))
+        await ctx.send(file=discord.File(mediavars.slicerelay))
 
     @commands.command(
         aliases=["amogus"],
@@ -298,9 +419,9 @@ class Media(commands.Cog):
             id = ctx.message.reference.message_id
             channel = ctx.channel
             message = await channel.fetch_message(id)
-            await message.reply(file=discord.File(self.amogus))
+            await message.reply(file=discord.File(mediavars.amogus))
         else:
-            await ctx.send(file=discord.File(self.amogus))
+            await ctx.send(file=discord.File(mediavars.amogus))
 
     @commands.command(
         aliases=["symjoy"],
@@ -308,7 +429,7 @@ class Media(commands.Cog):
         description="Sends the video of Symjoy",
     )
     async def Symjoy(self, ctx):
-        await ctx.send(file=discord.File(self.symjoy))
+        await ctx.send(file=discord.File(mediavars.symjoy))
 
     @commands.command(
         aliases=["mp5enjoyer", "MP5enjoyer"],
@@ -316,7 +437,7 @@ class Media(commands.Cog):
         description="Sends the video of MP5Enjoyer",
     )
     async def MP5Enjoyer(self, ctx):
-        await ctx.send(file=discord.File(self.mp5enjoyer))
+        await ctx.send(file=discord.File(mediavars.mp5enjoyer))
 
     @commands.command(
         aliases=["traumas", "trauma", "Trauma"],
@@ -324,7 +445,7 @@ class Media(commands.Cog):
         description="Sends the video of Traumas",
     )
     async def Traumas(self, ctx):
-        await ctx.send(file=discord.File(self.traumas))
+        await ctx.send(file=discord.File(mediavars.traumas))
 
     @commands.command(
         aliases=["luifoxfg"],
@@ -332,7 +453,39 @@ class Media(commands.Cog):
         description="Sends the video of Luifoxfg",
     )
     async def Luifoxfg(self, ctx):
-        await ctx.send(file=discord.File(self.luifoxfg))
+        await ctx.send(file=discord.File(mediavars.luifoxfg))
+
+    @commands.command(
+        aliases=["lologro", "Lologro"],
+        brief="Sends a video",
+        description="Sends the video of LoLogro",
+    )
+    async def LoLogro(self, ctx):
+        await ctx.send(file=discord.File(mediavars.lologro))
+
+    @commands.command(
+        aliases=["partyposting", "Partyposting"],
+        brief="Sends a video",
+        description="Sends the video of PartyPosting",
+    )
+    async def PartyPosting(self, ctx):
+        await ctx.send(file=discord.File(mediavars.partyposting))
+
+    @commands.command(
+        aliases=["rajoypensar"],
+        brief="Sends a video",
+        description="Sends the video of Rajoypensar",
+    )
+    async def Rajoypensar(self, ctx):
+        await ctx.send(file=discord.File(mediavars.rajoypensar))
+
+    @commands.command(
+        aliases=["sympinged"],
+        brief="Sends a video",
+        description="Sends the video of Sympinged",
+    )
+    async def Sympinged(self, ctx):
+        await ctx.send(file=discord.File(mediavars.sympinged))
 
     @commands.command(
         aliases=["switch"],
@@ -340,7 +493,7 @@ class Media(commands.Cog):
         description="Sends the video of Switch",
     )
     async def Switch(self, ctx):
-        await ctx.send(file=discord.File(self.switch))
+        await ctx.send(file=discord.File(mediavars.switch))
 
     @commands.command(
         aliases=["typo"],
@@ -348,7 +501,7 @@ class Media(commands.Cog):
         description="Sends the video of Typo",
     )
     async def Typo(self, ctx):
-        await ctx.send(file=discord.File(self.typo))
+        await ctx.send(file=discord.File(mediavars.typo))
 
 
 def setup(client):

@@ -5,8 +5,12 @@ from discord_slash import cog_ext, SlashContext
 import json
 import random
 import asyncio
+import sys
 from main import GetLastKanjiID
 from main import SetLastKanjiID
+
+sys.path.insert(1, "/mediavars.py")
+import mediavars
 
 
 class Slash(commands.Cog):
@@ -17,45 +21,6 @@ class Slash(commands.Cog):
     kanjijson = "kanji.json"
     with open(kanjijson, "r", encoding="utf8") as JsonFile:
         kanjidata = json.load(JsonFile)
-
-    mpdocument = "https://docs.google.com/spreadsheets/d/1z-eeH8Q1c3uJliE5v_K_MkNDp30SVGam2cyZvDE56Oo/edit?usp=sharing"
-    github = "https://github.com/Cerrebe/Symbot"
-
-    panconparty = "media/images/panconparty.png"
-    facilipeach = "media/images/facilipeach.png"
-    facilicheat = "media/images/facilicheat.jpg"
-    amañapeach = "media/images/amañapeach.png"
-    facilimario = "media/images/facilimario.jpg"
-    faciliboo = "media/images/faciliboo.png"
-    luiramo = "media/images/luiramo.jpg"
-    impercerbero = "media/images/impercerbero.png"
-    dificilikong = "media/images/dificilikong.jpg"
-    luistoriador = "media/images/luistoriador.png"
-    filetrelay = "media/images/filetrelay.jpg"
-    wpcerrebe = "media/images/wpcerrebe.png"
-    bonustars = "media/images/bonustars.jpg"
-    hiddenblock = "media/images/hiddenblock.png"
-    luipadres = "media/images/luipadres.jpg"
-    misteryduel = "media/images/misteryduel.jpg"
-    ganerrebe = "media/images/ganerrebe.jpg"
-    trust = "media/images/trust.png"
-    choice = "media/images/choice.png"
-    cerrescritorio = "media/images/cerrescritorio.png"
-    patrickmp = "media/images/patrickmp.png"
-    cachonda = "media/images/cachonda.jpg"
-    expose = "media/images/expose.png"
-    muchokanji = "media/images/muchokanji.png"
-    frowaifu = "media/images/frowaifu.png"
-    toadship = "media/gifs/toadship.gif"
-    pinged = "media/gifs/pinged.gif"
-    slicerelay = "media/audios/slicerelay.mp3"
-    amogus = "media/videos/amogus.mp4"
-    symjoy = "media/videos/symjoy.mp4"
-    mp5enjoyer = "media/videos/mp5enjoyer.mp4"
-    traumas = "media/videos/traumas.mp4"
-    luifoxfg = "media/videos/luifoxfg.mp4"
-    switch = "media/videos/switch.mp4"
-    typo = "media/videos/typo.mp4"
 
     # Regular Functions
     def GetKanjiByID(self, id):
@@ -77,6 +42,7 @@ class Slash(commands.Cog):
         print("slash cog loaded")
 
     # Commands
+    # kanji
     @cog_ext.cog_slash(
         description="Sends a kanji, can be limited by heising number",
     )
@@ -113,6 +79,7 @@ class Slash(commands.Cog):
             return
         await ctx.send(self.GetKanjiName(self.GetKanjiByID(GetLastKanjiID())))
 
+    # misc
     @cog_ext.cog_slash(
         description="Sends the ASCII Art of Facilito",
     )
@@ -132,13 +99,13 @@ class Slash(commands.Cog):
         description="Sends a link to the googledocs of Mario Party",
     )
     async def MPDocument(self, ctx: SlashContext):
-        await ctx.send(self.mpdocument)
+        await ctx.send(mediavars.mpdocument)
 
     @cog_ext.cog_slash(
         description="Sends a link to the repository of this bot",
     )
     async def GitHub(self, ctx: SlashContext):
-        await ctx.send(self.github)
+        await ctx.send(mediavars.github)
 
     @cog_ext.cog_slash(
         description="Says something on the current channel",
@@ -166,215 +133,354 @@ class Slash(commands.Cog):
         except ValueError:
             await ctx.send("time was not a number")
 
+    # media
     @cog_ext.cog_slash(
         description="Sends the image of PanConParty",
     )
     async def PanConParty(self, ctx):
-        await ctx.send(file=discord.File(self.panconparty))
+        await ctx.send(file=discord.File(mediavars.panconparty))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of PanConPartyPaint",
+    )
+    async def PanConPartyPaint(self, ctx):
+        await ctx.send(file=discord.File(mediavars.panconpartypaint))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of Logo",
+    )
+    async def Logo(self, ctx: SlashContext):
+        await ctx.send(file=discord.File(mediavars.logo))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of PeachParty",
+    )
+    async def PeachParty(self, ctx: SlashContext):
+        await ctx.send(file=discord.File(mediavars.peachparty))
 
     @cog_ext.cog_slash(
         description="Sends the image of Facilipeach",
     )
     async def Facilipeach(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.facilipeach))
+        await ctx.send(file=discord.File(mediavars.facilipeach))
 
     @cog_ext.cog_slash(
         description="Sends the image of Facilicheat",
     )
     async def Facilicheat(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.facilicheat))
+        await ctx.send(file=discord.File(mediavars.facilicheat))
 
     @cog_ext.cog_slash(
         description="Sends the image of Amañapeach",
     )
     async def Amañapeach(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.amañapeach))
+        await ctx.send(file=discord.File(mediavars.amañapeach))
 
     @cog_ext.cog_slash(
         description="Sends the image of Facilimario",
     )
     async def Facilimario(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.facilimario))
+        await ctx.send(file=discord.File(mediavars.facilimario))
 
     @cog_ext.cog_slash(
         description="Sends the image of Faciliboo",
     )
     async def Faciliboo(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.faciliboo))
+        await ctx.send(file=discord.File(mediavars.faciliboo))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of Faciliwario",
+    )
+    async def Faciliwario(self, ctx: SlashContext):
+        await ctx.send(file=discord.File(mediavars.faciliwario))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of Faciliyoshi",
+    )
+    async def Faciliyoshi(self, ctx: SlashContext):
+        await ctx.send(file=discord.File(mediavars.faciliyoshi))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of Facilitoad",
+    )
+    async def Facilitoad(self, ctx: SlashContext):
+        await ctx.send(file=discord.File(mediavars.facilitoad))
 
     @cog_ext.cog_slash(
         description="Sends the image of Luiramo",
     )
     async def Luiramo(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.luiramo))
+        await ctx.send(file=discord.File(mediavars.luiramo))
 
     @cog_ext.cog_slash(
         description="Sends the image of Impercerbero",
     )
     async def Impercerbero(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.impercerbero))
+        await ctx.send(file=discord.File(mediavars.impercerbero))
 
     @cog_ext.cog_slash(
         description="Sends the image of Impercerbero",
     )
     async def Impercerbero(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.impercerbero))
+        await ctx.send(file=discord.File(mediavars.impercerbero))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of Dificilikong",
+    )
+    async def Dificilikong(self, ctx: SlashContext):
+        await ctx.send(file=discord.File(mediavars.dificilikong))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of Peterilito",
+    )
+    async def Peterilito(self, ctx: SlashContext):
+        await ctx.send(file=discord.File(mediavars.peterilito))
 
     @cog_ext.cog_slash(
         description="Sends the image of Luistoriador",
     )
     async def Luistoriador(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.luistoriador))
+        await ctx.send(file=discord.File(mediavars.luistoriador))
 
     @cog_ext.cog_slash(
         description="Sends the image of Filetrelay",
     )
     async def Filetrelay(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.filetrelay))
+        await ctx.send(file=discord.File(mediavars.filetrelay))
 
     @cog_ext.cog_slash(
         description="Sends the image of WPCerrebe",
     )
     async def WPCerrebe(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.wpcerrebe))
+        await ctx.send(file=discord.File(mediavars.wpcerrebe))
 
     @cog_ext.cog_slash(
         description="Sends the image of Bonustars",
     )
     async def Bonustars(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.bonustars))
+        await ctx.send(file=discord.File(mediavars.bonustars))
 
     @cog_ext.cog_slash(
         description="Sends the image of Hiddenblock",
     )
     async def Hiddenblock(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.hiddenblock))
+        await ctx.send(file=discord.File(mediavars.hiddenblock))
 
     @cog_ext.cog_slash(
         description="Sends the image of Luipadres",
     )
     async def Luipadres(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.luipadres))
+        await ctx.send(file=discord.File(mediavars.luipadres))
 
     @cog_ext.cog_slash(
         description="Sends the image of Misteryduel",
     )
     async def Misteryduel(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.misteryduel))
+        await ctx.send(file=discord.File(mediavars.misteryduel))
 
     @cog_ext.cog_slash(
         description="Sends the image of Ganerrebe",
     )
     async def Ganerrebe(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.ganerrebe))
+        await ctx.send(file=discord.File(mediavars.ganerrebe))
 
     @cog_ext.cog_slash(
         description="Sends the image of Trust",
     )
     async def Trust(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.trust))
+        await ctx.send(file=discord.File(mediavars.trust))
 
     @cog_ext.cog_slash(
         description="Sends the image of Choice",
     )
     async def Choice(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.choice))
+        await ctx.send(file=discord.File(mediavars.choice))
 
     @cog_ext.cog_slash(
         description="Sends the image of Cerrescritorio",
     )
     async def Cerrescritorio(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.cerrescritorio))
+        await ctx.send(file=discord.File(mediavars.cerrescritorio))
 
     @cog_ext.cog_slash(
         description="Sends the image of PatrickMP",
     )
     async def PatrickMP(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.patrickmp))
+        await ctx.send(file=discord.File(mediavars.patrickmp))
 
     @cog_ext.cog_slash(
         description="Sends the image of Cachonda",
     )
     async def Cachonda(self, ctx):
-        await ctx.send(file=discord.File(self.cachonda))
+        await ctx.send(file=discord.File(mediavars.cachonda))
 
     @cog_ext.cog_slash(
-        description="Sends the image of Expose",
+        description="Sends the image of Luiexpose",
     )
-    async def Expose(self, ctx):
-        await ctx.send(file=discord.File(self.expose))
+    async def Luiexpose(self, ctx):
+        await ctx.send(file=discord.File(mediavars.luiexpose))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of Luiexpose2",
+    )
+    async def Luiexpose2(self, ctx):
+        await ctx.send(file=discord.File(mediavars.luiexpose2))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of Cheatrade",
+    )
+    async def Cheatrade(self, ctx):
+        await ctx.send(file=discord.File(mediavars.cheatrade))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of Claramente",
+    )
+    async def Claramente(self, ctx):
+        await ctx.send(file=discord.File(mediavars.claramente))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of Dinklerrebe",
+    )
+    async def Dinklerrebe(self, ctx):
+        await ctx.send(file=discord.File(mediavars.dinklerrebe))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of Ememp",
+    )
+    async def Ememp(self, ctx):
+        await ctx.send(file=discord.File(mediavars.ememp))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of McFlurry",
+    )
+    async def McFlurry(self, ctx):
+        await ctx.send(file=discord.File(mediavars.mcflurry))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of Miyazakimp",
+    )
+    async def Miyazakimp(self, ctx):
+        await ctx.send(file=discord.File(mediavars.miyazakimp))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of NeverChanceTime",
+    )
+    async def NeverChanceTime(self, ctx):
+        await ctx.send(file=discord.File(mediavars.neverchancetime))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of NobitaPistol",
+    )
+    async def NobitaPistol(self, ctx):
+        await ctx.send(file=discord.File(mediavars.nobitapistol))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of Pozoaceptacion",
+    )
+    async def Pozoaceptacion(self, ctx):
+        await ctx.send(file=discord.File(mediavars.pozoaceptacion))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of ViernesNoche",
+    )
+    async def ViernesNoche(self, ctx):
+        await ctx.send(file=discord.File(mediavars.viernesnoche))
 
     @cog_ext.cog_slash(
         description="Sends the image of MuchoKanji",
     )
     async def MuchoKanji(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.muchokanji))
+        await ctx.send(file=discord.File(mediavars.muchokanji))
 
     @cog_ext.cog_slash(
         description="Sends the image of Frowaifu",
     )
     async def Frowaifu(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.frowaifu))
+        await ctx.send(file=discord.File(mediavars.frowaifu))
 
     @cog_ext.cog_slash(
         description="Sends the gif of Toadship",
     )
     async def Toadship(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.toadship))
+        await ctx.send(file=discord.File(mediavars.toadship))
 
     @cog_ext.cog_slash(
         description="Sends the gif of Pinged",
     )
     async def Pinged(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.pinged))
+        await ctx.send(file=discord.File(mediavars.pinged))
 
     @cog_ext.cog_slash(
         description="Sends the audio of Slicerelay",
     )
     async def Slicerelay(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.slicerelay))
+        await ctx.send(file=discord.File(mediavars.slicerelay))
 
     @cog_ext.cog_slash(
         description="Sends the video of amogus",
     )
     async def Amogus(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.amogus))
+        await ctx.send(file=discord.File(mediavars.amogus))
 
     @cog_ext.cog_slash(
         description="Sends the video of Symjoy",
     )
     async def Symjoy(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.symjoy))
+        await ctx.send(file=discord.File(mediavars.symjoy))
 
     @cog_ext.cog_slash(
         description="Sends the video of MP5Enjoyer",
     )
     async def MP5Enjoyer(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.mp5enjoyer))
+        await ctx.send(file=discord.File(mediavars.mp5enjoyer))
 
     @cog_ext.cog_slash(
         description="Sends the video of Traumas",
     )
     async def Traumas(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.traumas))
+        await ctx.send(file=discord.File(mediavars.traumas))
 
     @cog_ext.cog_slash(
         description="Sends the video of Luifoxfg",
     )
     async def Luifoxfg(self, ctx):
-        await ctx.send(file=discord.File(self.luifoxfg))
+        await ctx.send(file=discord.File(mediavars.luifoxfg))
+
+    @cog_ext.cog_slash(
+        description="Sends the video of LoLogro",
+    )
+    async def LoLogro(self, ctx: SlashContext):
+        await ctx.send(file=discord.File(mediavars.lologro))
+
+    @cog_ext.cog_slash(
+        description="Sends the video of PartyPosting",
+    )
+    async def PartyPosting(self, ctx: SlashContext):
+        await ctx.send(file=discord.File(mediavars.partyposting))
+
+    @cog_ext.cog_slash(
+        description="Sends the video of Rajoypensar",
+    )
+    async def Rajoypensar(self, ctx: SlashContext):
+        await ctx.send(file=discord.File(mediavars.rajoypensar))
+
+    @cog_ext.cog_slash(
+        description="Sends the video of Sympinged",
+    )
+    async def Sympinged(self, ctx: SlashContext):
+        await ctx.send(file=discord.File(mediavars.sympinged))
 
     @cog_ext.cog_slash(
         description="Sends the video of Switch",
     )
     async def Switch(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.switch))
+        await ctx.send(file=discord.File(mediavars.switch))
 
     @cog_ext.cog_slash(
         description="Sends the video of Typo",
     )
     async def Typo(self, ctx: SlashContext):
-        await ctx.send(file=discord.File(self.typo))
+        await ctx.send(file=discord.File(mediavars.typo))
 
 
 def setup(client):
