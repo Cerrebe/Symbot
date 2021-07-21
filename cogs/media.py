@@ -418,7 +418,7 @@ class Media(commands.Cog):
         await ctx.send(file=discord.File(mediavars.pinged))
 
     @commands.command(
-        aliases=["follar"],
+        aliases=["follar", "fuckear", "Fuckear"],
         brief="Sends a gif",
         description="Sends the gif of Follar",
     )
