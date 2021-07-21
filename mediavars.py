@@ -1,8 +1,9 @@
 mpdocument = "https://docs.google.com/spreadsheets/d/1z-eeH8Q1c3uJliE5v_K_MkNDp30SVGam2cyZvDE56Oo/edit?usp=sharing"
 github = "https://github.com/Cerrebe/Symbot"
 
-panconparty = "media/images/panconparty.png"
+panconparty = "media/images/panconparty.jpg"
 panconpartypaint = "media/images/panconpartypaint.png"
+friendship = "media/images/friendship.jpg"
 logo = "media/images/logo.png"
 peachparty = "media/images/peachparty.png"
 facilipeach = "media/images/facilipeach.png"
@@ -59,3 +60,4 @@ rajoypensar = "media/videos/rajoypensar.mp4"
 sympinged = "media/videos/sympinged.mp4"
 switch = "media/videos/switch.mp4"
 typo = "media/videos/typo.mp4"
+
