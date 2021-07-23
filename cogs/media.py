@@ -191,6 +191,15 @@ class Media(commands.Cog):
         await ctx.send(file=discord.File(mediavars.mortafacilito))
 
     @commands.command(
+        aliases=["tiafacilito", "Tiafacilito"],
+        brief="Sends an image",
+        description="Sends the image of TIAfacilito",
+    )
+    async def TIAfacilito(self, ctx):
+        await ctx.send(file=discord.File(mediavars.filefacilito))
+        await ctx.send(file=discord.File(mediavars.mortafacilito))
+
+    @commands.command(
         aliases=["luistoriador"],
         brief="Sends an image",
         description="Sends the image of Luistoriador",
