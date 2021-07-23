@@ -153,6 +153,12 @@ class Slash(commands.Cog):
         await ctx.send(file=discord.File(mediavars.friendship))
 
     @cog_ext.cog_slash(
+        description="Sends the image of PaoComFesta",
+    )
+    async def PaoComFesta(self, ctx):
+        await ctx.send(file=discord.File(mediavars.paocomfesta))
+
+    @cog_ext.cog_slash(
         description="Sends the image of Logo",
     )
     async def Logo(self, ctx: SlashContext):
@@ -241,6 +247,18 @@ class Slash(commands.Cog):
     )
     async def Peterilito(self, ctx: SlashContext):
         await ctx.send(file=discord.File(mediavars.peterilito))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of Filefacilito",
+    )
+    async def Filefacilito(self, ctx: SlashContext):
+        await ctx.send(file=discord.File(mediavars.filefacilito))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of Mortafacilito",
+    )
+    async def Mortafacilito(self, ctx: SlashContext):
+        await ctx.send(file=discord.File(mediavars.mortafacilito))
 
     @cog_ext.cog_slash(
         description="Sends the image of Luistoriador",
@@ -397,6 +415,18 @@ class Slash(commands.Cog):
     )
     async def BowserAkello(self, ctx):
         await ctx.send(file=discord.File(mediavars.bowserakello))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of Ani2AM",
+    )
+    async def Ani2AM(self, ctx: SlashContext):
+        await ctx.send(file=discord.File(mediavars.ani2am))
+
+    @cog_ext.cog_slash(
+        description="Sends the image of MP8PM",
+    )
+    async def MP8PM(self, ctx: SlashContext):
+        await ctx.send(file=discord.File(mediavars.mp8pm))
 
     @cog_ext.cog_slash(
         description="Sends the image of MuchoKanji",

@@ -47,6 +47,14 @@ class Media(commands.Cog):
         await ctx.send(file=discord.File(mediavars.friendship))
 
     @commands.command(
+        aliases=["paocomfesta", "Paocomfesta", "PaocomFesta"],
+        brief="Sends an image",
+        description="Sends the image of PaoComFesta",
+    )
+    async def PaoComFesta(self, ctx):
+        await ctx.send(file=discord.File(mediavars.paocomfesta))
+
+    @commands.command(
         aliases=["logo"],
         brief="Sends an image",
         description="Sends the image of Logo",
@@ -165,6 +173,22 @@ class Media(commands.Cog):
     )
     async def Peterilito(self, ctx):
         await ctx.send(file=discord.File(mediavars.peterilito))
+
+    @commands.command(
+        aliases=["filefacilito"],
+        brief="Sends an image",
+        description="Sends the image of Filefacilito",
+    )
+    async def Filefacilito(self, ctx):
+        await ctx.send(file=discord.File(mediavars.filefacilito))
+
+    @commands.command(
+        aliases=["mortafacilito"],
+        brief="Sends an image",
+        description="Sends the image of Mortafacilito",
+    )
+    async def Mortafacilito(self, ctx):
+        await ctx.send(file=discord.File(mediavars.mortafacilito))
 
     @commands.command(
         aliases=["luistoriador"],
@@ -384,6 +408,22 @@ class Media(commands.Cog):
     )
     async def BowserAkello(self, ctx):
         await ctx.send(file=discord.File(mediavars.bowserakello))
+
+    @commands.command(
+        aliases=["ani2am", "Ani2am", "Aniplup2AM", "aniplup2am", "Aniplup2am"],
+        brief="Sends an image",
+        description="Sends the image of Ani2AM",
+    )
+    async def Ani2AM(self, ctx):
+        await ctx.send(file=discord.File(mediavars.ani2am))
+
+    @commands.command(
+        aliases=["mp8pm", "Mp8pm", "UnMarioPartyALas8", "unmariopartyalas8"],
+        brief="Sends an image",
+        description="Sends the image of MP8PM",
+    )
+    async def MP8PM(self, ctx):
+        await ctx.send(file=discord.File(mediavars.mp8pm))
 
     @commands.command(
         aliases=["muchokanji"],
