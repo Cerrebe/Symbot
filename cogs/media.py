@@ -250,7 +250,6 @@ class Media(commands.Cog):
     @commands.command(
         aliases=[
             "misteryduel",
-            "mistemporal",
             "lapiedrashapiñondermario",
             "lapiedrashapinondermario",
         ],
