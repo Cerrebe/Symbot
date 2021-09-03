@@ -5,6 +5,7 @@ from discord.ext import commands
 from discord.utils import get
 from discord import DMChannel
 from discord_slash import SlashCommand
+from discord import FFmpegPCMAudio
 import json
 import os
 
